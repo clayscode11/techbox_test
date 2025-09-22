@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="favicon-32x32 (1).png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+    </style>
+    <title>Techbox</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="logo">
+        <span class="logo-upper">Tech</span>
+        <span class="logo-lower">Box</span>
+      </h1>
+      <div>
+        <button id="button-el" onclick="openModal()">Create</button>
+        <dialog id="card-dialog">
+          Hi Mom!
+          <button class="close-button" onclick="closeModal()">&#x2715;</button>
+        </dialog>
+      </div>
+      <div class="kanban">
+        <section class="column"><h2>To do</h2></section>
+        <section class="column"><h2>In Progress</h2></section>
+        <section class="column"><h2>Staging</h2></section>
+        <section class="column"><h2>Done</h2></section>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

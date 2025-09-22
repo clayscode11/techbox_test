@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  background-color: #2a2a2a;
+}
+
+.logo {
+  display: block;
+  margin-left: 20px;
+  font-family: IBM Plex Mono;
+  font-size: xxx-large;
+}
+
+.logo-upper {
+  color: #007bff;
+}
+
+.logo-lower {
+  color: #ffffff;
+}
+
+.logo-upper,
+.logo-lower {
+  display: block;
+}
+
+button {
+  display: flexbox;
+  margin-left: 20px;
+  width: 100px;
+  font-family: IBM Plex Mono;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #7bb661;
+  cursor: pointer;
+}
+
+.kanban {
+  display: flex;
+  margin-left: 140px;
+  width: 91%;
+  height: 1030px;
+  background-color: #1e1e1e;
+}
+
+.column {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-family: IBM Plex Mono;
+  color: #007bff;
+}
+
+dialog {
+  width: 40%;
+  height: 400px;
+  border: 0px;
+  color: #ffffff;
+  background-color: #1e263a;
+  font-family: IBM Plex Mono;
+}
+
+.close-button {
+  display: flex;
+  margin-left: 95%;
+  background-color: transparent;
+  width: fit-content;
+  border: 0px;
+}

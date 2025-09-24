@@ -48,7 +48,6 @@ button {
   display: flex;
   padding: 12px;
   border: 1px solid #000000;
-  border-radius: 10px;
   font-family: IBM Plex Mono;
   color: #007bff;
 }
@@ -56,16 +55,39 @@ button {
 dialog {
   width: 40%;
   height: 400px;
+  position: relative;
   border: 0px;
+  border-radius: 10px;
   color: #ffffff;
   background-color: #1e263a;
   font-family: IBM Plex Mono;
 }
 
 .close-button {
-  display: flex;
-  margin-left: 95%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   background-color: transparent;
   width: fit-content;
   border: 0px;
+}
+
+.title {
+  display: flex;
+  align-content: center;
+  margin-left: 150px;
+  width: 60%;
+  font-family: IBM Plex Mono;
+  color: #ffffff;
+  background: #181e2d;
+}
+
+.task-description {
+  display: flex;
+  align-content: center;
+  margin-left: 150px;
+  width: 60%;
+  font-family: IBM Plex Mono;
+  color: #ffffff;
+  background: #181e2d;
 }

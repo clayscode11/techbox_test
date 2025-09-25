@@ -1,11 +1,17 @@
 body {
   margin: 0;
   background-color: #2a2a2a;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
 }
 
 .logo {
-  display: block;
-  margin-left: 20px;
+  display: flex;
+  margin-left: auto;
   font-family: IBM Plex Mono;
   font-size: xxx-large;
 }
@@ -26,7 +32,8 @@ body {
 button {
   display: flexbox;
   margin-left: 20px;
-  width: 100px;
+  width: auto;
+  padding: 5px;
   font-family: IBM Plex Mono;
   font-weight: bold;
   color: #ffffff;
@@ -36,18 +43,22 @@ button {
 
 .kanban {
   display: flex;
-  margin-left: 140px;
-  width: 91%;
-  height: 1030px;
+  justify-content: space-around;
+  align-items: stretch;
+  flex: 1;
+  height: auto;
   background-color: #1e1e1e;
+  min-height: 60vh;
+  border-radius: 10px;
 }
 
 .column {
   flex: 1;
   flex-direction: column;
   display: flex;
+  justify-content: center;
+  align-self: flex-start;
   padding: 12px;
-  border: 1px solid #000000;
   font-family: IBM Plex Mono;
   color: #007bff;
 }
@@ -74,15 +85,15 @@ dialog {
 
 .title {
   display: flex;
-  align-content: center;
-  margin-left: 150px;
+  justify-content: center;
+  align-items: center;
   width: 60%;
   font-family: IBM Plex Mono;
   color: #ffffff;
   background: #181e2d;
 }
 
-.task-description {
+.description {
   display: flex;
   align-content: center;
   margin-left: 150px;

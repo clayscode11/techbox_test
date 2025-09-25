@@ -16,17 +16,16 @@
         <span class="logo-upper">Tech</span>
         <span class="logo-lower">Box</span>
       </h1>
-      <div>
+      <div class= "container">
         <button id= "button-el" onclick="openModal()">Create</button>
         <dialog id= "card-dialog">
           <div class="field">
+          <button class="close-button" onclick="closeModal()">&#x2715;</button>
           <input id= "task-title" class= "title" type= "text" placeholder= "Name your task here"></input>
         </div>
         <div class= "field">
-        <textarea></textarea>
+        <textarea id= "task-description" class= "description" placeholder= "Define your task here"></textarea>
         </div>
-        </dialog>
-          <button class="close-button" onclick="closeModal()">&#x2715;</button>
         </dialog>
       </div>
       <div class="kanban">

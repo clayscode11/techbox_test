@@ -6,7 +6,8 @@ body {
 
 .container {
   display: flex;
-  padding: 20px;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .logo {
@@ -30,8 +31,9 @@ body {
 }
 
 button {
-  display: flexbox;
+  display: inline-flex;
   margin-left: 20px;
+  height: auto;
   width: auto;
   padding: 5px;
   font-family: IBM Plex Mono;
@@ -64,6 +66,10 @@ button {
 }
 
 dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 40%;
   height: 400px;
   position: relative;
@@ -74,30 +80,30 @@ dialog {
   font-family: IBM Plex Mono;
 }
 
+.field {
+  width: 80%;
+  margin: 10px 0;
+}
+
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
   background-color: transparent;
-  width: fit-content;
   border: 0px;
 }
 
 .title {
-  display: flex;
-  justify-content: center;
+  box-sizing: border-box;
   align-items: center;
-  width: 60%;
+  width: 100%;
   font-family: IBM Plex Mono;
   color: #ffffff;
   background: #181e2d;
 }
 
 .description {
-  display: flex;
-  align-content: center;
-  margin-left: 150px;
-  width: 60%;
+  width: 100%;
   font-family: IBM Plex Mono;
   color: #ffffff;
   background: #181e2d;

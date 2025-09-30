@@ -66,10 +66,6 @@ button {
 }
 
 dialog {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   width: 40%;
   height: 400px;
   position: relative;
@@ -78,6 +74,13 @@ dialog {
   color: #ffffff;
   background-color: #1e263a;
   font-family: IBM Plex Mono;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .field {

@@ -18,16 +18,29 @@
       </h1>
       <div class= "container">
         <button id= "button-el" onclick="openModal()">Create</button>
+
         <dialog id= "card-dialog">
           <div class="field">
           <button class="close-button" onclick="closeModal()">&#x2715;</button>
+          </div>
+          <div class="field">
+            <select id= "status" class="status-picklist">
+              <option value="option1" class="picklist-value">To do</option>
+              <option value="option2" class="picklist-value">In Progress</option>
+              <option value="option3" class="picklist-value">Staging</option>
+              <option value="option4" class="oicklist-value">Done</option>
+          </select>
+            </div>
+          <div class="field">
           <input id= "task-title" class= "title" type= "text" placeholder= "Name your task here"></input>
           <textarea id= "task-description" class= "description" placeholder= "Define your task here"></textarea>
         </div>
         <div class= "field">
-        <button id= "save-button" class= "save-button">Save</button>
+        <button id="delete-button" class="delete-button" onclick="deleteTask">Delete</button>
+        <button id= "save-button" class= "save-button" onclick= "createTask()">Save</button>
         </div>
         </dialog>
+
       </div>
       <div class="kanban">
         <section class="column"><h2>To do</h2></section>

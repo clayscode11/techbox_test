@@ -128,3 +128,10 @@ dialog[open] {
   background-color: #7bb661;
   cursor: pointer;
 }
+
+.status-picklist {
+  cursor: pointer;
+  font-family: IBM Plex Mono;
+  color: #ffffff;
+  background-color: #181e2d;
+}

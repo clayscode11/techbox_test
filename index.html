@@ -25,10 +25,10 @@
           </div>
           <div class="field">
             <select id= "status" class="status-picklist">
-              <option value="option1" id= "To do">To do</option>
-              <option value="option2" id= "In Progress">In Progress</option>
-              <option value="option3" id= "Staging">Staging</option>
-              <option value="option4" id= "Done">Done</option>
+              <option value="To do" id= "To do">To do</option>
+              <option value="In Progress" id= "In Progress">In Progress</option>
+              <option value="Staging" id= "Staging">Staging</option>
+              <option value="Done" id= "Done">Done</option>
           </select>
             </div>
           <div class="field">
@@ -43,10 +43,10 @@
 
       </div>
       <div class="kanban">
-        <section class="column"><h2>To do</h2></section>
-        <section class="column"><h2>In Progress</h2></section>
-        <section class="column"><h2>Staging</h2></section>
-        <section class="column"><h2>Done</h2></section>
+        <section data-status="To do" class="column"><h2>To do</h2></section>
+        <section data-status="In Progress" class="column"><h2>In Progress</h2></section>
+        <section data-status="Staging" class="column"><h2>Staging</h2></section>
+        <section data-status= "Done" class="column"><h2>Done</h2></section>
       </div>
     </div>
     <script src="index.js"></script>

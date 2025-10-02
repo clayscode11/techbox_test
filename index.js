@@ -11,17 +11,27 @@ function closeModal() {
 }
 
 function createTask() {
-  statusSelected = document.getElementById("status").value;
+  const el = document.createElement("article");
+  el.classList.add("task");
+  el.className = "task";
 
-  const card = document.createElement("div");
-  card.className = "card";
-  cardTitle = titleValue.value;
-  card.classList.add("card");
-  card.textContent = cardTitle;
+  el.dataset.id = el.id || "";
+  el.dataset.status = el.status || "To do";
+
+  const header = document.createElement("header");
+
+  const titleGenerator = document.createElement("h3");
+  const mapTitle = titleValue.value;
+  titleGenerator.textContent = mapTitle || "New Task";
+  header.appendChild(titleGenerator);
+  el.textContent = mapTitle;
+
+  statusSelected = document.getElementById("status").value;
+  el.textContent = mapTitle;
 
   const findStatus = document.querySelector(
     `[data-status="${statusSelected}"]`
   );
 
-  findStatus.appendChild(card);
+  findStatus.appendChild(el);
 }

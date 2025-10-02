@@ -58,11 +58,12 @@ button {
   flex: 1;
   flex-direction: column;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-self: flex-start;
   padding: 12px;
   font-family: IBM Plex Mono;
   color: #007bff;
+  gap: 1rem;
 }
 
 dialog {
@@ -134,4 +135,15 @@ dialog[open] {
   font-family: IBM Plex Mono;
   color: #ffffff;
   background-color: #181e2d;
+}
+
+.card {
+  width: 50%;
+  height: 400px;
+  position: relative;
+  border: 0px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #1e263a;
+  font-family: IBM Plex Mono;
 }

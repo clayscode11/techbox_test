@@ -13,6 +13,7 @@ function createTask() {
   statusSelected = document.getElementById("status").value;
 
   const card = document.createElement("div");
+  card.className = "card";
   card.classList.add("card");
   card.textContent = "Hi Mom!";
 

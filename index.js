@@ -10,28 +10,30 @@ function closeModal() {
   dialog.close();
 }
 
-function createTask() {
-  const el = document.createElement("article");
-  el.classList.add("task");
-  el.className = "task";
+function createTaskPreview() {
+  // grabs the dom element again if fails we refer back to global variable
+  const input = document.getElementById("task-title") || window.titleValue;
+  const mapTitle = (input?.value || "").trim() || "New Task"; // if no title use an empty string and writes New task in its place
 
-  el.dataset.id = el.id || "";
-  el.dataset.status = el.status || "To do";
+  const el = document.createElement("article");
+  el.className = "task-preview";
+  el.dataset.status = "To do"; // <- this maps to the html because it option uses data-status= "To do"
 
   const header = document.createElement("header");
+  const h3 = document.createElement("h3");
+  h3.className = "task-title";
+  h3.textContent = mapTitle;
 
-  const titleGenerator = document.createElement("h3");
-  const mapTitle = titleValue.value;
-  titleGenerator.textContent = mapTitle || "New Task";
-  header.appendChild(titleGenerator);
-  el.textContent = mapTitle;
+  header.appendChild(h3);
+  el.appendChild(header);
 
-  statusSelected = document.getElementById("status").value;
-  el.textContent = mapTitle;
-
-  const findStatus = document.querySelector(
-    `[data-status="${statusSelected}"]`
+  const column = document.querySelector(
+    `section[data-status="${el.dataset.status}"]`
   );
+  column.appendChild(el);
+  return el;
+}
 
-  findStatus.appendChild(el);
+function deleteTask() {
+  alert("This feature has yet to be implemented.");
 }

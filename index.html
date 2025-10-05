@@ -25,10 +25,10 @@
           </div>
           <div class="field">
             <select id= "status" class="status-picklist">
-              <option value="To do">To do</option>
-              <option value="In Progress">In Progress</option>
-              <option value="Staging">Staging</option>
-              <option value="Done">Done</option>
+              <option data-status="To do">To do</option>
+              <option data-status="In Progress">In Progress</option>
+              <option data-status="Staging">Staging</option>
+              <option data-status="Done">Done</option>
           </select>
             </div>
           <div class="field">
@@ -36,8 +36,8 @@
           <textarea id= "task-description" class= "description" placeholder= "Define your task here"></textarea>
         </div>
         <div class= "field">
-        <button id="delete-button" class="delete-button" onclick="deleteTask">Delete</button>
-        <button id= "save-button" class= "save-button" onclick= "createTask()">Save</button>
+        <button id="delete-button" class="delete-button" onclick="deleteTask()">Delete</button>
+        <button id= "save-button" class= "save-button" onclick= "createTaskPreview()">Save</button>
         </div>
         </dialog>
 

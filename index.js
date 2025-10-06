@@ -13,7 +13,7 @@ function closeModal() {
 function createTaskPreview() {
   // grabs the dom element again if fails we refer back to global variable
   const input = document.getElementById("task-title") || window.titleValue;
-  const mapTitle = (input?.value || "").trim() || "New Task"; // if no title use an empty string and writes New task in its place
+  const title = (input?.value || "").trim() || "New Task"; // if no title use an empty string and writes New task in its place
 
   const el = document.createElement("article");
   el.addEventListener("click", openModal);
@@ -24,7 +24,7 @@ function createTaskPreview() {
   const status = document.getElementById("status");
   const value = status.value;
   const queryForStatus = status.options[status.selectedIndex].text;
-  el.dataset.status = queryForStatus; // FIXME the status is hardcoded - model it's logic off of the title mapping
+  el.dataset.status = statusText;
   const header = document.createElement("header");
   const h3 = document.createElement("h3");
   h3.className = "task-title";
@@ -38,10 +38,13 @@ function createTaskPreview() {
   );
   column.appendChild(el);
 
+  const tasks = JSON.parse(localStorage.getItem("tasks" || "[]"));
+  localeStorage.push({ id, title, status: statusText });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
   return el;
 }
 
 function deleteTask() {
-  const elementToDelete = document.getElementById;
   alert("This feature has yet to be implemented.");
 }

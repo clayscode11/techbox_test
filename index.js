@@ -16,9 +16,11 @@ function createTaskPreview() {
   const mapTitle = (input?.value || "").trim() || "New Task"; // if no title use an empty string and writes New task in its place
 
   const el = document.createElement("article");
+  const id = "task-" + Date.now();
+  el.id = id;
+  el.dataset.id = id;
   el.className = "task-preview";
-  el.dataset.status = "To do"; // <- this maps to the html because it option uses data-status= "To do"
-
+  el.dataset.status = "To do"; // FIXME the status is hardcoded - model it's logic off of the title mapping
   const header = document.createElement("header");
   const h3 = document.createElement("h3");
   h3.className = "task-title";

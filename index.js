@@ -23,12 +23,12 @@ function createTaskPreview() {
   el.className = "task-preview";
   const status = document.getElementById("status");
   const value = status.value;
-  const queryForStatus = status.options[status.selectedIndex].text;
+  const statusText = status.options[status.selectedIndex].text;
   el.dataset.status = statusText;
   const header = document.createElement("header");
   const h3 = document.createElement("h3");
   h3.className = "task-title";
-  h3.textContent = mapTitle;
+  h3.textContent = title;
 
   header.appendChild(h3);
   el.appendChild(header);
@@ -38,8 +38,10 @@ function createTaskPreview() {
   );
   column.appendChild(el);
 
-  const tasks = JSON.parse(localStorage.getItem("tasks" || "[]"));
-  localeStorage.push({ id, title, status: statusText });
+  console.log(statusText, id, title);
+
+  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+  tasks.push({ id, title, status: statusText });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   return el;

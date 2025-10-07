@@ -22,6 +22,7 @@ function loadAndRebuildTask(event) {
   if (task) {
     document.getElementById("task-title").value = task.title;
     document.getElementById("status").value = task.status;
+    document.getElementById("task-description").value = task.description;
   }
 }
 
@@ -30,21 +31,30 @@ function createTaskPreview() {
   const input = document.getElementById("task-title") || window.titleValue;
   const title = (input?.value || "").trim() || "New Task"; // if no title use an empty string and writes New task in its place
 
+  const descriptionInput = document.getElementById("task-description");
+  const description = (descriptionInput?.value || "").trim() || "";
+
   el = document.createElement("article");
   el.addEventListener("click", loadAndRebuildTask);
   const id = "task-" + Date.now();
   el.id = id;
   el.dataset.id = id;
   el.className = "task-preview";
+
   const status = document.getElementById("status");
   const statusText = status.options[status.selectedIndex].text;
   el.dataset.status = statusText;
+
   const header = document.createElement("header");
   const h3 = document.createElement("h3");
   h3.className = "task-title";
   h3.textContent = title;
 
-  header.appendChild(h3);
+  const textArea = document.createElement("textarea");
+  textArea.className = "task-description";
+  textArea.textContent = description;
+
+  header.append(h3, textArea);
   el.appendChild(header);
 
   const column = document.querySelector(
@@ -52,10 +62,10 @@ function createTaskPreview() {
   );
   column.appendChild(el);
 
-  console.log(statusText, id, title);
+  console.log(statusText, id, title, description);
 
   const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-  tasks.push({ id, title, status: statusText });
+  tasks.push({ id, title, status: statusText, description: description });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   return el;

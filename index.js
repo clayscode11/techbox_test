@@ -39,25 +39,22 @@ function createTaskPreview() {
   const id = "task-" + Date.now();
   el.id = id;
   el.dataset.id = id;
-  el.className = "task-preview";
+  el.className = "task-preview"; // ID Declaration
 
   const status = document.getElementById("status");
   const statusText = status.options[status.selectedIndex].text;
-  el.dataset.status = statusText;
+  el.dataset.status = statusText; // Status Declaration
 
   const header = document.createElement("header");
   const h3 = document.createElement("h3");
   h3.className = "task-title";
-  h3.textContent = title;
+  h3.textContent = title; // Create title elements
 
-  const textArea = document.createElement("textarea");
-  textArea.className = "task-description";
-  textArea.textContent = description;
-
-  header.append(h3, textArea);
-  el.appendChild(header);
+  header.append(h3);
+  el.appendChild(header); // append elements to header and root
 
   const column = document.querySelector(
+    // following is all of the value mapping
     `section[data-status="${el.dataset.status}"]`
   );
   column.appendChild(el);

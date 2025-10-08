@@ -83,8 +83,8 @@ function deleteTask(e) {
   const card = document.querySelector(`article[data-id="${id}"]`);
   if (card) {
     card.remove();
+    dialog.close();
+  } else {
+    alert("No Tasks to delete! Go build something.");
   }
-
-  dialog.close();
-  //alert("This feature has yet to be implemented.");
 }

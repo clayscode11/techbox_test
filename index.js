@@ -1,6 +1,8 @@
 const createEl = document.getElementById("button-el");
 const dialog = document.getElementById("card-dialog");
 const titleValue = document.getElementById("task-title");
+const deleteEl = document.getElementById("delete-button");
+deleteEl.addEventListener("click", deleteTask);
 let el;
 
 function openModal() {
@@ -12,7 +14,8 @@ function closeModal() {
 }
 
 function loadAndRebuildTask(event) {
-  const id = event.currentTarget.dataset.id;
+  dialog.dataset.id = event.currentTarget.dataset.id;
+  const id = dialog.dataset.id;
 
   dialog.showModal();
 
@@ -68,6 +71,15 @@ function createTaskPreview() {
   return el;
 }
 
-function deleteTask() {
-  alert("This feature has yet to be implemented.");
+function deleteTask(id) {
+  const findId = event.currentTarget.dataset.id;
+  const taskToDelete = event.target;
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
+  const task = tasks.find((t) => t.findId === findId);
+  console.log(task);
+  if (task) {
+    taskToDelete.closest("article").remove();
+  }
+
+  //alert("This feature has yet to be implemented.");
 }
